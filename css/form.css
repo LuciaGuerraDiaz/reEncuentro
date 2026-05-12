@@ -1,0 +1,127 @@
+/* forzar la fuente en todo el formulario */
+
+.formulario-body {
+    font-family: 'Montserrat', sans-serif;
+    color: #222222;
+}
+
+.formulario-body h1,
+.formulario-body p,
+.formulario-body label,
+.formulario-body input,
+.formulario-body textarea,
+.formulario-body button,
+.formulario-body a {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-texto);
+}
+
+/*estilo general del formulario*/
+
+.formulario-body {
+    margin: 0;
+    background-color: var(--bg01);
+    color: var(--color-texto);
+    font-family: inherit;
+}
+
+.formulario-header {
+    padding: 3rem 1.5rem 2rem;
+}
+
+.header-form-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo-form img {
+    width: 110px;
+    height: auto;
+    display: block;
+}
+
+.header-form-texto {
+    max-width: 700px;
+}
+
+.eyebrow-form {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--bg-white);
+}
+
+.header-form-texto h1 {
+    margin-bottom: 1rem;
+}
+
+.formulario-main {
+    padding: 0 1.5rem;
+    box-shadow: var(--texto-dark);
+}
+
+.form-comunidad {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bloque-formulario {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--color-turquesa);
+    border-radius: 32px;
+    padding: 4rem 1.5rem;
+}
+
+.formulario-contenedor {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    position: relative;
+    border-radius: 24px;
+    padding: 2rem;
+    z-index: 2;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white);;
+    gap: 0.5rem;
+}
+
+.campo-formulario label {
+    font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--color-turquesa);
+    border-radius: 16px;
+    background-color: var(--bgWhite);
+    color: var(--texto-dark);
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.campo-formulario textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.formulario-footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+}
+

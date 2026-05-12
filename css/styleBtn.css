@@ -7,9 +7,16 @@
     flex-wrap: wrap;       /* En pantallas chicas, pone uno debajo del otro */
 }
 
+.cta-btn {
+    display: flex;          /* Convierte al div en contenedor flex */
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center;    /* Centra el botón verticalmente (si el div tiene altura) */
+    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
+    margin-top: 2rem;       /* Espacio superior */
+}
 
 .btn-register {
-    background-color: #3f3f3f; /* Color oscuro como el 'Ingresar' de la foto */
+    background-color: var(--color-verde); /* Color oscuro como el 'Ingresar' de la foto */
     color: white;
     border: none;
     padding: 10px 25px;
@@ -20,53 +27,222 @@
 }
 
 .btn-register:hover {
-    background-color: #166534;
+    background-color: var(--color-hover); /* Cambia a un verde más oscuro al pasar el mouse */
+    box-shadow: var(--shdw); /* Agrega una sombra para dar efecto de profundidad */
 }
 
 .btn-registerEncontre {
-    background-color: #fdfdfd; /* Color oscuro como el 'Ingresar' de la foto */
-    background-size: 10;
-    color: rgb(12, 12, 12);
-    border: 2px solid #00000000;
-    border-radius: 25px; /* Bordes redondeados */
-    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    min-height: 220px;
+    background-color: #fdfdfd;
+    color: var(--color-oscuro);
+    border: 2px solid var(--color-turquesa);
+    border-radius: var(--radio-borde);
     font-weight: 600;
-    font-style:  color #00000000; 
-    font-size: 2.5;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-size: 2.5rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease; /* Transición suave para todos los estados */
+    z-index: 1;
+} 
+
+.btn-registerEncontre::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/static/logoChico.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; /* Un poco más grande para que se note el efecto */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    filter: drop-shadow(12px 4px 6px rgba(0,0,0,0.30));
+    pointer-events: none;
+    z-index: 3; /* Por encima del fondo del botón, por debajo del texto */
+}
+
+/* El Texto (Capa superior) */
+.btn-registerEncontre span {
+    position: relative;
+    z-index: 4; /* Siempre por encima del logo */
+}
+
+.btn-registerEncontre:hover {
+    transform: scale(1.1);
+    background-color: color-mix(in srgb, var(--color-turquesa) 20%, var(--color-turquesa));
+    color:#fdfdfd;
+    border: 2px solid var(--color-oscuro);
+    z-index: 0;
+}
+
+.btn-registerEncontre:hover::before {
+    opacity: 0.35;
 }
 
 .btn-registerBusco {
-    background-color: #fdfdfd; /* Color oscuro como el 'Ingresar' de la foto */
-    background-size: 10;
-    color: rgb(12, 12, 12);
-    border: 2px solid #00000000;
-    border-radius: 25px; /* Bordes redondeados */
-    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    min-height: 220px;
+    background-color: #fdfdfd;
+    color: var(--color-oscuro);
+    border: 2px solid var(--color-turquesa);
+    border-radius: var(--radio-borde);
     font-weight: 600;
-    font-style:  color #00000000; 
-    font-size: 2.5;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-size: 2.5rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease; /* Transición suave para todos los estados */
+    z-index: 1;
 }
 
-.cta-btn {
-    display: flex;         /* Activa el modo flexible */
-    justify-content: center; /* Los centra horizontalmente en la página */
-    gap: 40px;             /* Establece la separación exacta entre botones */
-    margin-top: 50px;      /* Les da aire respecto al texto de arriba */
-    flex-wrap: wrap;
-    border-radius: 25px;   
+
+.btn-registerBusco::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/static/logoChico.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%; /* Un poco más grande para que se note el efecto */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    filter: drop-shadow(12px 4px 6px rgba(0,0,0,0.30));
+    pointer-events: none;
+    z-index: 3; /* Por encima del fondo del botón, por debajo del texto */
+}
+
+/* El Texto (Capa superior) */
+.btn-registerBusco span {
+    position: relative;
+    z-index: 4; /* Siempre por encima del logo */
+}
+
+.btn-registerBusco:hover {
+    transform: scale(1.1);
+    background-color: color-mix(in srgb, var(--color-turquesa) 20%, var(--color-turquesa));
+    color:#fdfdfd;
+    border: 2px solid var(--color-oscuro);
+    z-index: 0;
+}
+
+.btn-registerBusco:hover::before {
+    opacity: 0.35;
+}
+
+
+.btn-unete {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1rem 44px;
+    background-color: var(--color-verde);
+    color: var(--texto-light);
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .btn-etiquetasQR {
-    display: flex;         /* Activa el modo flexible */
-    justify-content: center; /* Los centra horizontalmente en la página */
-    gap: 40px;             /* Establece la separación exacta entre botones */
-    margin-top: 50px;      /* Les da aire respecto al texto de arriba */
-    flex-wrap: wrap; 
-    border-radius: 25px;  
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 44px;
+    background-color: var(--color-verde);
+    color: var(--texto-light);
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none; 
+}
+
+/* Botón de Volver al Inicio */
+.btn-volver-inicio {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 24px;
+    background-color: var(--color-oscuro);
+    color: var(--texto-light);
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-volver-inicio:hover {
+    transform: translateY(-2px);
+}
+
+/*Botones formularios*/
+
+.btn-comunidad {
+    align-self: center;
+    padding: 12px 24px;
+    margin-top: 2rem;
+    border: none;
+    border-radius: var(--radio-borde);
+    background-color: var(--color-turquesa);
+    color: var(--bgWhite);
+    font-weight: 600;
+    align-self: center;
+    cursor: pointer;
+}
+
+.btn-comunidad:hover {
+    background-color: var(--color-hover);
+    color: var(--bgWhite);
+}
+
+.btn-enviar {
+    align-self: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radio-borde);
+    background-color: var(--color-turquesa);
+    color: var(--bgWhite);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-hover);
+    color: var(--bgWhite);
+}
+
+.btn-volver,
+.btn-volver:link,
+.btn-volver:visited {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: var(--color-turquesa);
+    color: var(--bgWhite);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-volver:hover {
+    background-color: var(--color-hover);
+    color: var(--texto-light);
+}
+
+/* Estilo específico para el botón de volver en el footer en paginas en construccion*/
+.style-footer .btn-volver {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Sin subrayado en los botones de accion */
+.btn-registerEncontre,
+.btn-registerBusco {
+    text-decoration: none;
 }

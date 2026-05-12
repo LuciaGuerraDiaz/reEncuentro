@@ -1,0 +1,36 @@
+/* ----------------------  Ilustraciones de card de pasos -----------------------*/
+
+.card-foto .card-ilustracion {
+    background-image: url("../assets/ilustraciones/card-foto.png");
+}
+
+.card-match .card-ilustracion {
+    background-image: url("../assets/ilustraciones/card-match.png");
+}
+
+.card-entrega .card-ilustracion {
+    background-image: url("../assets/ilustraciones/card-entrega.png");
+}
+
+/*-----------------------Fotos de card de impacto*-----------------------------*/
+
+.plastico-card {
+    background-image: url("../assets/photo/plasticos-card.png");
+}
+
+.recuperados-card {
+    background-image: url("../assets/photo/recuperados-card.png");
+}
+
+.fundaciones-card {
+    background-image: url("../assets/photo/fundaciones-card.png");
+}
+
+/*-----------------------fondo botones busco y encuentro-----------------------------*/
+.btn-registerEncontre::before {
+    background-image: url("../assets/static/logoChicoEncontre.svg");
+}
+
+.btn-registerBusco::before {
+    background-image: url("../assets/static/logoChicoBusco.svg");
+}

@@ -1,0 +1,61 @@
+<!-- Tipografías Google Fonts Las fuentes de la página son Montserrat css-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Links a css-->
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/styleBtn.css">
+<link rel="stylesheet" href="../css/styleSection.css">
+<link rel="stylesheet" href="../css/image.css">
+<link rel="stylesheet" href="../css/form.css">
+
+<body class="formulario-body">
+
+    <header class="formulario-header">
+        <div class="header-form-contenedor">
+            <a href="../index.html" class="logo-form">
+                <img src="../assets/static/logoChico.svg" alt="Logo ReEncuentro">
+            </a>
+
+            <div class="header-form-texto">
+                <p class="eyebrow-form">Estas a un paso de unirte a nuestra comunidad</p>
+                <h1>En nuestra comunidad compartimos conocimiento y experiencias</h1>
+                <p>
+                    Completa este formulario y serás parte de nuestra comunidad.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="formulario-main">
+        <section class="bloque-formulario">
+            <div class="formulario-contenedor">
+                <form class="form-comunidad">
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <button type="submit" class="btn-comunidad">Suscribirse a la comunidad</button>
+                    </div>
+            
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="formulario-footer">
+        <a href="../index.html" class="btn-volver">Volver a la página principal</a>
+    </footer>
+
+</body>

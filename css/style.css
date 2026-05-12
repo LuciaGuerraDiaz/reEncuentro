@@ -10,7 +10,7 @@ class="logo_menu"
 /* -----------------------*/
 /* El cuerpo del contenido*/
 body {
-    background-color: #f5f5f5; /* Un verde clarito para probar */
+    background-color: var(--bgWhite); /* definido por variables */
     font-family: 'Montserrat', sans-serif;
 }
 /*Titulos*/
@@ -42,10 +42,19 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 10;
     font-style: normal; 
-    color: #ffffff;
+    color: var(--texto-dark);
     text-align: center;
 }
 
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.fondo-color-seccion {
+    background-color: var(--color-turquesa);
+    border-radius: var(--radio-borde);
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
 
 /* Imágenes responsivas */
 img {
@@ -54,9 +63,16 @@ img {
   display: block;
 }
 
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    align-content: center;
+}
+
 /* Configuración general del Header */
 .main_header {
-    background-color: #ffffff; /* Fondo blanco como la referencia */
+    background-color: var(--bg-white); /* Fondo blanco como la referencia */
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: sticky;
@@ -84,7 +100,7 @@ img {
     font-size: 0.8rem;
     margin: 0;
     font-weight: 400;
-    color: #667;
+    color: var(--texto-media);
 }
 
 /* Navegación */
@@ -98,14 +114,14 @@ img {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--texto-dark);
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #166534; /* Cambio de color al pasar el mouse */
+    color: var(--color-verde); /* Cambio de color al pasar el mouse */
 }
 
 /*Submenus/*
@@ -134,14 +150,14 @@ img {
 .submenu li a {
     padding: 10px 20px;
     display: block;
-    color: #333;
+    color: var(--texto-dark);
     font-size: 0.9rem;
     text-decoration: none;
 }
 
 .submenu li a:hover {
-    background-color: #f0fdf4; /* Tu verde clarito al pasar el mouse */
-    color: #166534;            /* Tu verde bosque */
+    background-color: var(--bg-medio); /* Tu verde clarito al pasar el mouse */
+    color: var(--color-hover); /* verde bosque */
 }
 
 /* MOSTRAR EL SUBMENÚ AL PASAR EL MOUSE */
@@ -150,30 +166,233 @@ img {
 }
 
 /* Tarjetas, para mostrar pasos o testimonios */
+
+
+.fondo-color-seccion {
+    background-color: var(--color-turquesa);
+    border-radius: var(--radio-borde);
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+/* Tarjetas, para mostrar pasos o testimonios */
+/* Cards pasos */
 .grilla-pasos {
-    display: grid; 
-    padding: 60px 100px 60px 100px;
-    grid-template-columns: repeat(3, 1fr); /* Crea las 3 columnas iguales */
-    gap: 50px; /* Espacio entre las tarjetas */
-    background-color: var(--color-turquesa); /* Color oscuro como el 'Ingresar' de la foto */
-    color: var(--color-textoT);
-    border-radius: var(--radio-borde); /* Bordes redondeados */
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); */
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: clamp(1rem, 4vw, 3.75rem);
+    background-color: var(--color-turquesa);
+    border-radius: var(--radio-borde);
 }
 
 .paso-card {
+    position: relative;
+    overflow: hidden;
     display: flex;
-    background-color: #f3f1f1; /* Color oscuro como el 'Ingresar' de la foto */
-    color: rgb(47, 47, 47);
-    padding: 30px 30px 30px 30px;
-    border: 1px solid rgb(69, 69, 69);
-    border-radius: 25px; /* Bordes redondeados */
-    font-weight: 600;
+    background-color: color-mix(in srgb, var(--bg-white) 80%, transparent);
+    color: var(--texto-dark);
+    padding: 1.5rem;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-borde);
     cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: rgb(69, 69, 69);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 0px;
+}
+
+.card-contenido {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+.card-contenido h3 {
+    position: top;
+    color: var(--texto-light);
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card-ilustracion {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    border-radius: var(--radio-borde);
+    opacity: 1;
+    z-index: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scale(0.88);
+}
+
+.paso-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-white);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+}
+/*Texto al inicio del card*/
+.paso-card h2 {
+    display: inline-block;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+/*Texto al post card*/
+.paso-card:hover h2 {
+    color: var(--texto-dark);
+    background-color: transparent;
+    text-shadow: none;
+}
+.paso-card:hover .card-ilustracion {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.paso-card:hover::after {
+    opacity: 1;
+}
+
+.paso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+
+/* 1. Ocultamos el párrafo inicialmente */
+.paso-card .card-contenido p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    visibility: hidden; /* Evita que el mouse detecte el texto oculto */
+}
+
+/* 2. Cuando el mouse pasa sobre la card */
+.paso-card:hover .card-contenido p {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Bloque QR */
+
+.bloque-qr p {
+    margin-bottom: 1rem;
+}
+
+/*cta de iniciar pasos, al boton de inicio*/
+
+.contenedor-volver-inicio {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 12rem;
+}
+
+/* Testimonios   */
+
+.grilla-testimonios {  /*variante para que se vea una sola columna*/
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.testimonio-card {
+    position: relative;
+    min-height: 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+.testimonio-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.28);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.testimonio-card:hover .testimonio-overlay {
+    background-color: rgba(0, 0, 0, 0.42);
+}
+
+.testimonio-contenido {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.titulo-impacto {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.numero-impacto {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(10px);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.testimonio-card:hover .titulo-impacto {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.testimonio-card:hover .numero-impacto {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Final */
+
+.comunidad {
+    background-color: var(--bg-white);
+    text-align: center;
 }
 
 .style-footer {
@@ -210,15 +429,29 @@ img {
 }
 
 
-
-
 /* Responsividad: En celulares se ve una sola columna */
 @media (max-width: 768px) { 
     /* Cuando la pantalla sea menor a 768px... */
     .grilla-pasos {
-        grid-template-columns: 1fr; /* Cambia a una sola columna (una arriba de otra) */
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 3rem;
+    }
+
+    .contenedor {
+        width: 82%;
+    }
+    .paso-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    .seccion-pasos,
+    .general-section,
+    .seccion-final-blanca {
+        padding: 3rem 0;
     }
 }
+
 
 @media (max-width: 768px) {
     /* Cambia la navegación a un listado vertical */
@@ -234,5 +467,17 @@ img {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
+    }
+}
+
+@media (orientation: landscape) {
+    .seven {
+    background-color: var(--bgWhite);
+    }
+}
+
+@media (orientation: portrait) {
+    .seven {
+    background-color: var(--bgWhite);
     }
 }

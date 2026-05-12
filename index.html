@@ -1,4 +1,4 @@
-<!-- Estructura de proyecto de economia circular-->
+<!-- Estructura de proyecto de economia circular.  Versión 02-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./css/style.css"> <!--Controla los estilos principales-->
     <link rel="stylesheet" href="./css/styleBtn.css"> <!--Controla los estilos principales-->
     <link rel="stylesheet" href="./css/styleSection.css"> <!--Controla el estilo de cada sección-->
+    <link rel="stylesheet" href="./css/image.css"> <!--Controla la ruta de las imágenes-->
+    <link rel="stylesheet" href="./css/form.css"> <!--Controla los formularios-->
 </head>
 
 <body>
@@ -48,18 +50,20 @@
         <li><a href="#como-funciona">Cómo funciona</a></li>
         
         <li class="dropdown">
-            <a href="#Circular-objeto">Circulando</a>
+            <a href="#circular-objeto">Circulando</a>
             <ul class="submenu">
-                <li><a href="#Impacto">Impacto</a></li>
-                <li><a href="#Comunidad">Comunidad</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
             </ul>
         </li>
 
-        <li><a href="#Contacto">Contacto</a></li>
+        <li><a href="./forms/contacto.html" class="btn-contacto">Contacto</a></li>
+        
     
         <!-- ||||||||||||||||||||| Botón Regitro ||||||||||||||||||||||| -->
     
-        <button class="btn-register">Registrarse</button>
+        
+        <a href="./forms/contacto.html"  class="btn-register">Registrarse</a>
         </ul> </nav>
         </div>
 
@@ -70,13 +74,13 @@
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     
     <main>
-    <div class="general-section">
+    <div class="general-section ilustracion-inicio">
         <div class="contenedor-flex">
         <h1>Re-encuentro objetos perdidos</h1>
         <img src="./assets/ilustraciones/mochila.svg" alt="Descripción de la ilustración" class="ilustracion-svg">
         <br>
         <p>La plataforma conecta los objetos perdidos en el colegio con sus familias.  
-        Transforma lo que no se reclama en donaciones para los que más lo necesitan</p>
+        Transforma lo que no se reclama en donaciones o materias prima para reutilización.</p>
         </div>
     </div>
 <!-- +++++++++++++++++++ Inicio ++++++++++++++++++++++++++++++++ -->
@@ -84,82 +88,113 @@
     <div>
         <section id="inicio" class="general-section">
             <div class="contenedor-flex">
-            <h1>Menos cosas perdidas, más planeta cuidado.</h1>
+            <h1>Menos cosas perdidas, más cuidado con el planeta.</h1>
             <h2>Quieres iniciar </h2>
             <div class="contendor-btn">
-                <button class="btn-registerEncontre">Encontre</button>
-                <button class="btn-registerBusco">Busco</button> 
+                <a href="./pages/encontre.html" class="btn-registerEncontre"><span>Encontre</span></a>
+                <a href="./pages/busco.html" class="btn-registerBusco"><span>Busco</span></a>
             </div>    
             </p>
             </div>
         </section>
     </div>
-    <!-- ++++++++++++++++++++++++ cómo funciona? Sección pasos  +++++++++++++++++++++++++++++ -->    
-    <div>
-        <section id="como-funciona" class="seccion-pasos">
+
+<!-- ++++++++++++++++++++++++ cómo funciona? Sección pasos  +++++++++++++++++++++++++++++ -->
+    <section id="como-funciona" class="seccion-pasos">
         <div class="contenedor">
-        <h1 class="titulo-seccion"> Recuperar tus cosas es así de fácil</h1>
-        <div class="grilla-pasos">
-            <div class="paso-card">
-                <div class="icono">📸</div>
-                <h2>Reporte con Foto</h3>
-                <p>Si perdiste algo o encontraste un objeto, subís la foto o descripción a nuestra vitrina virtual en un minuto.</p>
-            </div>
+            <h1 class="titulo-seccion">Recuperar tus cosas es así de fácil</h1>
+            <div class="fondo-color-seccion">
+                <div class="grilla-pasos">
+                
+                <div class="paso-card card-foto">
+                    <div class="card-ilustracion" aria-hidden="true"></div>
+                    <div class="card-contenido">
+                        <div class="icono">📸</div>
+                        <h2>Reporte con Foto o descripción</h2>
+                        <p class="texto-hover">Si perdiste algo o encontraste un objeto, subís la foto o descripción a nuestra vitrina virtual en un minuto.</p>
+                    </div>
+                </div>
 
-            <div class="paso-card">
-                <div class="icono">🔍</div>
-                <h2>Match Inteligente</h3>
-                <p>Nuestra tecnología cruza datos de talla, colegio, color y etiquetas para notificarte al instante si hay una coincidencia.</p>
+                <div class="paso-card card-match">
+                    <div class="card-ilustracion" aria-hidden="true"></div>
+                    <div class="card-contenido">
+                        <div class="icono">🔍</div>
+                        <h2>Match Inteligente</h2>
+                        <p>Nuestra tecnología cruza datos de talla, colegio, color y etiquetas para notificarte al instante si hay una coincidencia.</p>
+                    </div>
+                </div>
+                <div class="paso-card card-entrega">
+                    <div class="card-ilustracion" aria-hidden="true"></div>
+                    <div class="card-contenido">
+                        <div class="icono">🤝</div>
+                        <h2>Entrega Coordinada</h2>
+                        <p>Validás la pertenencia con el colegio y retiras el objeto en el punto de retorno asignado.</p>
+                    </div>
+                </div>    
             </div>
+                <div>
+                <a href="#inicio" class="btn-volver-inicio">Iniciar</a> 
+            </div>
+        </div>
+    <section>
+<!----------------------------------------Bloque QR --------------------------------------->
+    <section id="bloque-qr" class="seccion-pasos"> 
+        <div class="bloque-qr">
+            <h1>Una manera de participar en nuestro proyecto es usando nuestras Etiquetas QR</h1>
+                <div class="cta-btn">    
+                <a href="./pages/etiquetas.html" class="btn-etiquetasQR">Etiquetas QR</a>
+                </div>
+        </div> 
+    </section>
 
-            <div class="paso-card">
-                <div class="icono">🤝</div>
-                <h2>Entrega Coordinada</h3>
-                <p>Validás la pertenencia con el colegio y retiras el objeto en el punto de retorno asignado.</p>
-            </div>
-            
-            <div> <h2 class="titulo-seccion">
-                <p> Una manera de participar en nuestro proyecto es comprando nuestras Etiquetas QR</p>
-            </div>
-            <br>
-            <div class="cta-botton">  
-            <button class="btn-etiquetasQR">Etiquetas QR</button>
-            </div>
-    </div>
 <!-- ++++++++++++++++++++++++++++++ Impacto  +++++++++++++++++++++++++++++++++++++ -->  
 <div>
     <section id="impacto" class="general-section">
         <div class="contenedor">
             <h1 class="titulo-seccion" > Donde termina un descuido, empieza una oportunidad.    Nada se pierde, todo se transforma.</h1>
-        </div>   
-        <div class="grilla-pasos">
-            <div class="paso-card"> </div>
-            <h2>Plástico recuperado</h2>
-            </div>
-        
-            <div class="paso-card">
-            <h2>Total de objetos recuperados</h2>
-            </div>
 
-            <div class="paso-card">
-            <h2>Fundaciones beneficiadas</h2>
-             </div> 
-        <br>
-    </div>
-    <section>   <div class="seccion-final-blanca"> 
-        <h2 class="titulo-seccion" > Recuperar, conectar, linkear benficia a todos</h2>  
-        <p> Quieres que tu colegio participe, representas una fundación. <br> <br>Únete a nuestar comunidad. 
-        </p>
-        <br>
-        <div class="cta-btn">  
-        <button class="btn-comunidad">Únete</button>
-    </div> 
+            <div class="grilla-testimonios">
+                <div class="testimonio-card plastico-card">
+                    <div class="testimonio-overlay"></div>
+                    <div class="testimonio-contenido">     
+                        <h2 class="titulo-impacto">Plástico recuperado</h2>
+                        <div class="numero-impacto">+1.250 kg</div>
+                    </div>
+                </div>
 
+                <div class="testimonio-card recuperados-card">
+                    <div class="testimonio-overlay"></div>
+                    <div class="testimonio-contenido">
+                        <h2 class="titulo-impacto">Total de objetos recuperados</h2>
+                        <div class="numero-impacto">+3.480</div>
+                    </div>
+                </div>
+
+                <div class="testimonio-card fundaciones-card">
+                    <div class="testimonio-overlay"></div>
+                    <div class="testimonio-contenido">
+                        <h2 class="titulo-impacto">Fundaciones beneficiadas</h2>
+                        <div class="numero-impacto">12</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>           
 </div>
+<!-- +++++++++++++++++++++++++++++++ Comunidad  +++++++++++++++++++++++++++++++++++++ -->
+<section>   
+    <div class="comunidad" id="comunidad"> 
+        <h2 class="titulo-seccion" > Recuperar, conectar, linkear beneficia a todos</h2>  
+        <p> ¿Quieres que tu colegio participe? ¿Representas una fundación? <br> <br>Únete a nuestra comunidad. 
+        </p>
+        <div class="contenedor-unete">
+            <a href="./forms/comunidad.html" class="btn-unete">Únete</a>
+        </div>
+    </div> 
+    <div>  <p> <br> </p> </div>
 </section>
     </div>
     </main>
-
 <aside> 
 </aside>    
 <!-- +++++++++++++++++++ footer ++++++++++++++++++++++++++++++++ -->
@@ -170,6 +205,7 @@
             <a href="#inicio">Inicio</a>
             <a href="#como-funciona">Cómo funciona</a>
             <a href="#impacto">Impacto</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     <br>
     <p>Contacto directo: hola@re-encuentro.com | Redes Sociales (iconos).</p>

@@ -6,14 +6,21 @@
     text-align: center;
 }
 
+.seccion-pasos {
+    padding: 4rem 0;
+}
+
 .general-section {
     display: flex;
     flex-direction: column;
     text-align: center; 
     padding: 20px 20px; /* Mucho aire arriba y abajo */
     justify-content: center; 
-    background-color: #f5f5f5;
+    background-color: var(--bg-medio);
     width: 100%;
+}
+.ilustracion-inicio {
+    background-color: var(--bgWhite);
 }
 
 .contenedor-flex {
@@ -24,4 +31,31 @@
     max-width: 700px;       /* Esto crea el efecto de "columna central" de la referencia */
     width: 90%;             /* Para que en móviles no toque los bordes */
     margin: 0 auto;         /* Asegura el centrado absoluto */
+}
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+/* Seccion del final */
+
+.seccion-final-blanca {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.seccion-final-blanca .cta-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.en-construccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20%;
+    padding: 3rem 3rem;
 }
